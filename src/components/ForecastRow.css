@@ -1,0 +1,101 @@
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.fc-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  transition: var(--transition);
+  animation: fadeSlideUp 0.4s ease both;
+  position: relative;
+  overflow: hidden;
+}
+.fc-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-violet));
+  opacity: 0;
+  transition: var(--transition);
+}
+.fc-card:hover {
+  border-color: rgba(0,229,255,0.25);
+  transform: translateY(-3px);
+}
+.fc-card:hover::before { opacity: 1; }
+
+.fc-day {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.fc-date { font-size: 11px; color: var(--text-dim); }
+.fc-icon { font-size: 36px; line-height: 1; margin: 4px 0; }
+.fc-desc { font-size: 12px; color: var(--text-muted); }
+.fc-pop {
+  font-size: 12px;
+  color: #6ec6ff;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.pop-icon { font-size: 10px; }
+
+.fc-temps {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+.fc-hi {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent-warm);
+}
+.fc-lo {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: #6ec6ff;
+}
+
+.fc-bar-wrap { width: 100%; }
+.fc-bar-track {
+  position: relative;
+  height: 5px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.fc-bar-fill {
+  position: absolute;
+  top: 0; bottom: 0;
+  background: linear-gradient(90deg, #6ec6ff, var(--accent-warm));
+  border-radius: 3px;
+}
+
+.fc-extra {
+  display: flex;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--text-dim);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .forecast-grid { grid-template-columns: repeat(2, 1fr); }
+}

@@ -1,0 +1,174 @@
+.cw-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: relative;
+  overflow: hidden;
+}
+.cw-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-violet), var(--accent-warm));
+}
+
+.cw-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.cw-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cw-pin { font-size: 16px; }
+.cw-city {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.cw-country {
+  background: rgba(0,229,255,0.12);
+  color: var(--accent-cyan);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+.cw-datetime { font-size: 13px; color: var(--text-muted); }
+
+.cw-hero {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.cw-icon-wrap {
+  width: 100px;
+  height: 100px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cw-emoji { font-size: 52px; line-height: 1; }
+
+.cw-temps { flex: 1; min-width: 160px; }
+.cw-temp-main {
+  font-family: var(--font-display);
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -4px;
+  color: var(--text-primary);
+}
+.cw-unit {
+  font-size: 36px;
+  letter-spacing: 0;
+  color: var(--accent-cyan);
+  vertical-align: super;
+}
+.cw-description { font-size: 18px; color: var(--text-muted); margin-top: 6px; }
+.cw-feels { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
+
+.cw-minmax {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-left: auto;
+}
+.minmax-item { text-align: center; }
+.minmax-label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  margin-bottom: 2px;
+}
+.minmax-val {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+}
+.minmax-val.high { color: var(--accent-warm); }
+.minmax-val.low  { color: #6ec6ff; }
+.minmax-divider { height: 1px; background: var(--border-glass); }
+
+.cw-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+.detail-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  transition: var(--transition);
+}
+.detail-card:hover {
+  border-color: rgba(0,229,255,0.2);
+  background: rgba(0,229,255,0.03);
+}
+.detail-icon { font-size: 20px; flex-shrink: 0; }
+.detail-body { display: flex; flex-direction: column; gap: 2px; }
+.detail-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-dim);
+}
+.detail-value {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.detail-sub { font-size: 12px; color: var(--text-muted); }
+
+.travel-tips {
+  background: rgba(123,94,167,0.08);
+  border: 1px solid rgba(123,94,167,0.2);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+}
+.tips-header {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--accent-violet);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.tips-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tips-list li { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+
+@media (max-width: 520px) {
+  .cw-card { padding: 20px; }
+  .cw-temp-main { font-size: 56px; }
+  .cw-emoji { font-size: 40px; }
+  .cw-icon-wrap { width: 76px; height: 76px; }
+}
